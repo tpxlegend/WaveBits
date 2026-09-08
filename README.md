@@ -116,44 +116,6 @@ A sleek, modern interface with full dark mode support and customizable themes.
 
 ## Installation
 
-### Prerequisites
-- Node.js (v18+) / Flutter SDK / Android Studio / Xcode (depending on platform)
-- Git
-- A package manager (npm / yarn / pub)
-
-### Clone the Repository
-```bash
-git clone https://github.com/your-username/wavebits.git
-cd wavebits
-```
-
-### Install Dependencies
-```bash
-npm install
-# or
-yarn install
-```
-
-### Run the App
-```bash
-# For mobile (React Native example)
-npx react-native run-android
-npx react-native run-ios
-
-# For web
-npm run dev
-```
-
-### Environment Variables
-Create a `.env` file in the root directory:
-```env
-API_BASE_URL=https://api.wavebits.app
-STREAMING_SERVICE_KEY=your_key_here
-CDN_URL=your_cdn_url_here
-```
-
----
-
 ## Getting Started
 
 1. **Sign up / Log in** using email, phone number, or social login.
@@ -162,32 +124,6 @@ CDN_URL=your_cdn_url_here
 4. **Play instantly** — no ads, no interruptions.
 5. **Create playlists**, like songs, and download for offline listening.
 6. **Sync across devices** by logging into the same account anywhere.
-
----
-
-## App Architecture
-
-```
-WaveBits/
-├── android/                # Native Android project
-├── ios/                    # Native iOS project
-├── src/
-│   ├── components/         # Reusable UI components
-│   ├── screens/            # App screens (Home, Player, Search, Library)
-│   ├── services/           # API calls, streaming logic
-│   ├── store/               # State management (Redux/Zustand)
-│   ├── utils/               # Helper functions
-│   └── assets/              # Images, icons, fonts
-├── backend/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   └── services/
-├── docs/                    # Documentation
-├── .env.example
-├── package.json
-└── README.md
-```
 
 ---
 
