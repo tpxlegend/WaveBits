@@ -243,7 +243,7 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact & Support
 
 - 📧 Email: tpxlegend438@gmail.com
-- 🌐 Website: [www.wavebits.app](#)
+- 🌐 Website: [https://wavebits.vercel.app/](#)
   
 ---
 
