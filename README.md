@@ -242,11 +242,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact & Support
 
-- 📧 Email: support@wavebits.app
-- 🐦 Twitter/X: [@WaveBitsApp](#)
+- 📧 Email: tpxlegend438@gmail.com
 - 🌐 Website: [www.wavebits.app](#)
-- 🐛 Found a bug? [Open an issue](#)
-
+  
 ---
 
 <p align="center">Made with ❤️ for music lovers who just want to press play.</p>
