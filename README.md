@@ -114,19 +114,6 @@ A sleek, modern interface with full dark mode support and customizable themes.
 
 ---
 
-## Installation
-
-## Getting Started
-
-1. **Sign up / Log in** using email, phone number, or social login.
-2. **Pick your favorite genres and languages** for personalized recommendations.
-3. **Search or browse** the combined music library.
-4. **Play instantly** — no ads, no interruptions.
-5. **Create playlists**, like songs, and download for offline listening.
-6. **Sync across devices** by logging into the same account anywhere.
-
----
-
 ## Roadmap
 
 - [x] Ad-free streaming engine
@@ -137,36 +124,6 @@ A sleek, modern interface with full dark mode support and customizable themes.
 - [ ] Voice-controlled playback
 - [ ] Smartwatch companion app
 - [ ] Lyrics-based search
-
----
-
-## Contributing
-
-Contributions are welcome! To contribute:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-Please make sure to follow the existing code style and include tests where applicable.
-
----
-
-## FAQ
-
-**Q: Is WaveBits really free forever?**
-A: Yes. There are no subscription tiers or hidden premium unlocks.
-
-**Q: How does WaveBits stay ad-free?**
-A: WaveBits is designed around a sustainable, non-intrusive model that doesn't rely on interrupting the listening experience with ads.
-
-**Q: Can I download songs for offline listening?**
-A: Yes, offline downloads are available to all users at no extra cost.
-
-**Q: Does WaveBits work internationally?**
-A: Yes, WaveBits combines both international and regional Indian music catalogs.
 
 ---
 
