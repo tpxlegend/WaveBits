@@ -166,11 +166,9 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact & Support
 
-- 📧 Email: support@wavebits.app
-- 🐦 Twitter/X: [@WaveBitsApp](#)
-- 🌐 Website: [www.wavebits.app](#)
-- 🐛 Found a bug? [Open an issue](#)
-
+- 📧 Email: tpxlegend438@gmail.com
+- 🌐 Website: [wavebits.vercel.app](#)
+  
 ---
 
 <p align="center">Made with ❤️ for music lovers who just want to press play.</p>
