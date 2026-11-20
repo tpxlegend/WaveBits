@@ -104,18 +104,12 @@ WaveBits follows defense-in-depth practices on Android:
    cd WaveBits
    ```
 
-2. **Optional environment configuration**
-   Copy `.env.example` if you want to configure optional release update metadata (never commit real secrets or keystores):
-   ```bash
-   cp .env.example .env
-   ```
-
-3. **Assemble the Debug APK**
+2. **Assemble the Debug APK**
    ```bash
    ./gradlew :app:assembleDebug
    ```
 
-4. **Run Unit & Security Tests**
+3. **Run Unit & Security Tests**
    ```bash
    ./gradlew :app:testDebugUnitTest :extensions:test
    ```
