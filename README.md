@@ -50,7 +50,7 @@ Built natively with **Kotlin**, **Jetpack Compose**, **Media3 / ExoPlayer**, and
 
 ### 🎨 Modern Fluid UI
 - **Immersive Glass & OLED Aesthetics:** Dynamic album-artwork header gradients, frosted glass floating navigation pill, true AMOLED black mode, and adaptive layouts for phones, foldables, and tablets.
-- **60fps Animations & Power Policy:** Spring-tuned touch interactions, smooth scrolling, and a smart Battery Saver policy that automatically reduces background work on battery and restores full visual fidelity while charging.
+- **Smooth Animations & Power Policy:** Spring-tuned touch interactions, smooth scrolling, and a smart Battery Saver policy that automatically reduces background work on battery and restores full visual fidelity while charging.
 - **Time-Synced Lyrics:** Full-screen live lyrics with smooth auto-scroll, translations, and quick lyric sharing.
 
 ### 🤝 Social & Extensibility
