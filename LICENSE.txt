@@ -1,0 +1,51 @@
+WaveBits — GNU General Public License v3.0 (GPL-3.0)
+====================================================
+
+Copyright (C) 2025-2026 WaveBits Contributors (tpxstudio / WaveBits)
+
+This project is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+Public License for more details.
+
+The complete, authoritative text of the GNU General Public License
+Version 3 (29 June 2007) is published by the Free Software Foundation at:
+
+    https://www.gnu.org/licenses/gpl-3.0.txt
+
+SPDX-License-Identifier: GPL-3.0-or-later
+
+------------------------------------------------------------------------
+Summary of Terms
+------------------------------------------------------------------------
+- Permissions: Commercial use, modification, distribution, patent use,
+  and private use.
+- Conditions: Disclose full source code for distributed builds or
+  derivative works, preserve copyright and license notices, license
+  derivatives under GPL-3.0, and state significant changes made to files.
+- Limitations: No warranty and no liability.
+
+------------------------------------------------------------------------
+Upstream Attribution & Third-Party Licenses
+------------------------------------------------------------------------
+WaveBits incorporates and adapts open-source work with attribution:
+
+1. InnerTube (YouTube Music InnerTube & NewPipeExtractor integration) — GPL-3.0
+   YouTube Music client and extractor components licensed under GPL-3.0.
+
+2. Spotui (https://github.com/Spotui/Spotui) — GPL-3.0
+   DASH/FLAC remuxing components adapted under GPL-3.0.
+
+3. Backdrop (https://github.com/Kyant0/backdrop) — Apache License 2.0
+   Full license text bundled at: licenses/Apache-2.0.txt
+
+4. GlassSelectionPill (Copyright 2025 Ahmed Gamil) — MIT License
+
+5. Typefaces — SIL Open Font License 1.1
+   - Manrope: licenses/Manrope-OFL.txt
+   - Inter:   licenses/Inter-OFL.txt
