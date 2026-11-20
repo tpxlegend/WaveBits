@@ -1,0 +1,75 @@
+package com.music.spotui.data.preferences
+
+import android.content.Context
+import app.wavebits.host.android.BackendMode
+import app.wavebits.host.android.WaveBitsRuntime
+import com.music.spotui.data.entity.SongsModel
+import org.json.JSONObject
+
+// Persists the last playing track + position per platform so each platform
+// (Spotify, YouTube Music, JioSaavn) restores its own independent mini player session.
+
+private const val PREF = "PlaybackState"
+private const val KEY_SONG = "song"
+private const val KEY_POSITION = "positionMs"
+
+private fun prefNameFor(mode: BackendMode): String = "${PREF}_${mode.name}"
+
+/** Saves the track for [mode] (resets the stored position when the track changed). */
+fun saveLastPlayback(
+    context: Context,
+    song: SongsModel,
+    mode: BackendMode = WaveBitsRuntime.backendMode.value,
+) {
+    if (song.title.isBlank() || song.url.isBlank()) return
+    val p = context.getSharedPreferences(prefNameFor(mode), Context.MODE_PRIVATE)
+    val prevId = runCatching { p.getString(KEY_SONG, null)?.let { JSONObject(it).optInt("id", -1) } }
+        .getOrNull() ?: -1
+    val json = JSONObject().apply {
+        put("id", song.id); put("title", song.title); put("album", song.album)
+        put("singer", song.singer); put("coverUri", song.coverUri)
+        put("url", song.url); put("spotifyTrackId", song.spotifyTrackId)
+        put("explicit", song.explicit); put("durationMs", song.durationMs)
+    }
+    p.edit().apply {
+        putString(KEY_SONG, json.toString())
+        if (prevId != song.id) putLong(KEY_POSITION, 0L)
+    }.apply()
+}
+
+/** Updates just the position of the stored track for [mode] (called periodically). */
+fun saveLastPosition(
+    context: Context,
+    positionMs: Long,
+    mode: BackendMode = WaveBitsRuntime.backendMode.value,
+) {
+    if (positionMs <= 0) return
+    context.getSharedPreferences(prefNameFor(mode), Context.MODE_PRIVATE)
+        .edit().putLong(KEY_POSITION, positionMs).apply()
+}
+
+/** The last track and position for [mode], or null if nothing was ever played on [mode]. */
+fun loadLastPlayback(
+    context: Context,
+    mode: BackendMode = WaveBitsRuntime.backendMode.value,
+): Pair<SongsModel, Long>? {
+    val p = context.getSharedPreferences(prefNameFor(mode), Context.MODE_PRIVATE)
+    val raw = p.getString(KEY_SONG, null) ?: return null
+    return runCatching {
+        val o = JSONObject(raw)
+        val song = SongsModel(
+            id = o.optInt("id", -1),
+            title = o.optString("title"),
+            album = o.optString("album"),
+            singer = o.optString("singer"),
+            coverUri = o.optString("coverUri"),
+            url = o.optString("url"),
+            spotifyTrackId = o.optString("spotifyTrackId"),
+            explicit = o.optBoolean("explicit", false),
+            durationMs = o.optInt("durationMs", 0),
+        )
+        if (song.title.isBlank() || song.url.isBlank()) null
+        else song to p.getLong(KEY_POSITION, 0L)
+    }.getOrNull()
+}
+

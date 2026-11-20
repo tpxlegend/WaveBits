@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:width="108dp" android:height="108dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+    <item
+        android:width="74dp"
+        android:height="74dp"
+        android:top="17dp"
+        android:bottom="17dp"
+        android:left="17dp"
+        android:right="17dp"
+        android:drawable="@drawable/ic_app_icon_anime_boy"
+        android:gravity="center" />
+</layer-list>

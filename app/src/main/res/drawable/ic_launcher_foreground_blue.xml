@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- WaveBits blue launcher mark (adaptive-icon safe zone). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- W stroke -->
+    <path
+        android:pathData="M24,44 L34,68 L45,52 L55,68 L67,48"
+        android:strokeColor="#509BF5"
+        android:strokeWidth="6.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+    <!-- B stroke -->
+    <path
+        android:pathData="M49,39 L70,39 C79,39 79,53.5 69,53.5 C80,53.5 80,68 70,68 L61,68"
+        android:strokeColor="#509BF5"
+        android:strokeWidth="6.5"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillColor="#00000000" />
+</vector>

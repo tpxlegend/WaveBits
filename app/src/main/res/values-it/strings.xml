@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WaveBits</string>
+    <string name="aa_playlists">Playlists</string>
+    <string name="aa_albums">Album</string>
+    <string name="aa_artists">Artisti</string>
+    <string name="settings_amoled_theme">Tema AMOLED</string>
+    <string name="settings_amoled_theme_subtitle">Sfondo nero puro per risparmiare batteria</string>
+    <string name="main_update_available">È disponibile un nuovo aggiornamento</string>
+    <string name="notif_action_play">Riproduci</string>
+    <string name="notif_action_pause">Pausa</string>
+    <string name="notif_shuffle_enable">Attiva riproduzione casuale</string>
+    <string name="notif_shuffle_disable">Disattiva riproduzione casuale</string>
+    <string name="notif_shuffle_disable_smart">Disattiva riproduzione casuale intelligente</string>
+    <string name="account_page_title">Account Spotify</string>
+    <string name="account_page_detail">Abbonamento, privacy e dispositivi, su spotify.com</string>
+    <string name="energy_saver_title">Risparmio energetico</string>
+    <string name="energy_saver_summary">Canvas disattivati, video e animazioni più leggeri</string>
+    <string name="playback_seek_description">Posizione di riproduzione</string>
+    <string name="video_fullscreen_enter">Schermo intero</string>
+    <string name="video_fullscreen_exit">Esci dallo schermo intero</string>
+    <string name="player_source_downloaded">Scaricato</string>
+</resources>

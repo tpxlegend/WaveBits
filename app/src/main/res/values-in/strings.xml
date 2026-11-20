@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WaveBits</string>
+    <string name="aa_playlists">Playlist</string>
+    <string name="aa_albums">Album</string>
+    <string name="aa_artists">Artis</string>
+    <string name="settings_amoled_theme">Tema AMOLED</string>
+    <string name="settings_amoled_theme_subtitle">Latar belakang hitam pekat untuk menghemat baterai</string>
+    <string name="main_update_available">Pembaruan baru tersedia</string>
+    <string name="notif_action_play">Putar</string>
+    <string name="notif_action_pause">Jeda</string>
+    <string name="notif_shuffle_enable">Aktifkan pemutaran acak</string>
+    <string name="notif_shuffle_disable">Nonaktifkan pemutaran acak</string>
+    <string name="notif_shuffle_disable_smart">Nonaktifkan pemutaran acak pintar</string>
+    <string name="player_source_downloaded">Diunduh</string>
+</resources>

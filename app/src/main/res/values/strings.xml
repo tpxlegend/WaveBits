@@ -1,0 +1,28 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">WaveBits</string>
+    <string name="aa_playlists">Playlists</string>
+    <string name="aa_albums">Albums</string>
+    <string name="aa_artists">Artists</string>
+    <string name="settings_amoled_theme">AMOLED Theme</string>
+    <string name="settings_amoled_theme_subtitle">Pure black background to save battery</string>
+    <string name="main_update_available">A new update is available</string>
+
+    <string name="notif_action_play">Play</string>
+    <string name="notif_action_pause">Pause</string>
+    <string name="notif_shuffle_enable">Enable shuffle</string>
+    <string name="notif_shuffle_disable">Disable shuffle</string>
+    <string name="notif_shuffle_disable_smart">Disable smart shuffle</string>
+
+
+    <string name="energy_saver_title" tools:ignore="MissingTranslation">Battery saver</string>
+    <string name="energy_saver_summary" tools:ignore="MissingTranslation">Reduces background network activity and disables heavy animations when not charging</string>
+    <string name="energy_saver_status_active" tools:ignore="MissingTranslation">Active on battery: background network reduced and heavy animations disabled</string>
+    <string name="energy_saver_status_charging" tools:ignore="MissingTranslation">Paused while charging: full animations and background sync active</string>
+    <string name="video_fullscreen_enter" tools:ignore="MissingTranslation">Enter fullscreen</string>
+    <string name="video_fullscreen_exit" tools:ignore="MissingTranslation">Exit fullscreen</string>
+    <string name="playback_seek_description" tools:ignore="MissingTranslation">Playback position</string>
+    <string name="account_page_title">Spotify account</string>
+    <string name="account_page_detail">Plan, privacy and devices, on spotify.com</string>
+    <string name="player_source_downloaded">Downloaded</string>
+    <string name="extension_change_write">Now also allowed to send to Spotify: %1$s</string>
+</resources>

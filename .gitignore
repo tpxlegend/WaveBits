@@ -1,0 +1,30 @@
+# build outputs
+build/
+.gradle/
+.kotlin/
+*.apk
+*.zip
+*.log
+dist/
+local.properties
+# device captures (logs can contain session data)
+tools/captures/
+base/tools/captures/
+__pycache__/
+.idea/
+PROMPT-*.md
+# internal working notes (account, device, local paths): kept on the machine, never published
+HANDOFF.md
+ANNEXE-ETAT.txt
+docs/RESTE-A-FAIRE.md
+tools/handoff_state.sh
+REDDIT-*.md
+tools/qa-results/
+# secrets & environment files
+.env
+.env.*
+!.env.example
+keystore/
+*.jks
+*.keystore
+

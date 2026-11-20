@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <!-- Local Files: the device's own audio files, read only. -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- Ensure tablets, foldables, and cellular/ethernet devices are never excluded. -->
+    <uses-feature android:name="android.hardware.wifi" android:required="false" />
+    <uses-feature android:name="android.hardware.screen.portrait" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
+
+    <application
+        android:name="app.wavebits.WaveBitsApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="${appLabel}"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WaveBits"
+        android:networkSecurityConfig="@xml/network_security_config">
+        <!-- Cover art for Android Auto (content:// only); Spotify image CDN hosts only. -->
+        <provider
+            android:name="com.music.spotui.di.ArtworkProvider"
+            android:authorities="${applicationId}.artwork"
+            android:exported="true" />
+        <!-- Share-as-image cards, handed to the target app through a read grant. -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.car.application"
+            android:resource="@xml/automotive_app_desc" />
+
+        <meta-data
+            android:name="firebase_analytics_collection_deactivated"
+            android:value="true" />
+        <meta-data
+            android:name="google_analytics_adid_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_performance_collection_deactivated"
+            android:value="true" />
+
+
+        <!-- Debug and beta builds only (cliEnabled, build.gradle.kts): tools/wavebits-cli drives the app over adb.
+             DUMP is held by the adb shell, not by other apps. -->
+        <receiver
+            android:name="com.music.spotui.cli.CliReceiver"
+            android:enabled="${cliEnabled}"
+            android:exported="true"
+            android:permission="android.permission.DUMP">
+            <intent-filter>
+                <action android:name="${applicationId}.CLI" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="app.wavebits.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="unspecified"
+            android:supportsPictureInPicture="true"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.WaveBits">
+            <intent-filter>
+                <action android:name="android.media.action.MEDIA_PLAY_FROM_SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <!-- No autoVerify: these are Spotify's domains, verification can never
+                 pass for this app. spotify.link / spoti.fi short links (how the official
+                 apps share a collaborative playlist invitation) are offered too: the id and
+                 the invitation token (pt) are only in the redirect target, which the app
+                 resolves itself (InviteLinks). -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="https"
+                    android:host="open.spotify.com" />
+                <data
+                    android:scheme="https"
+                    android:host="spotify.com" />
+                <data
+                    android:scheme="https"
+                    android:host="www.spotify.com" />
+                <data
+                    android:scheme="https"
+                    android:host="play.spotify.com" />
+                <data
+                    android:scheme="https"
+                    android:host="spotify.link" />
+                <data
+                    android:scheme="https"
+                    android:host="spoti.fi" />
+            </intent-filter>
+        </activity>
+
+        <!-- App Icon launcher aliases (Settings > App Icon): dynamic launcher icons -->
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherDefault"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherAnimeBoy"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_anime_boy"
+            android:roundIcon="@mipmap/ic_launcher_anime_boy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherCartoonBoy"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_cartoon_boy"
+            android:roundIcon="@mipmap/ic_launcher_cartoon_boy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherMinecraft"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_minecraft"
+            android:roundIcon="@mipmap/ic_launcher_minecraft">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherPixel"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_pixel"
+            android:roundIcon="@mipmap/ic_launcher_pixel">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity-alias
+            android:name="app.wavebits.engine.ui.LauncherRoblox"
+            android:targetActivity="app.wavebits.MainActivity"
+            android:label="${appLabel}"
+            android:exported="true"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_roblox"
+            android:roundIcon="@mipmap/ic_launcher_roblox">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Spotify's account pages, in a browser that shares the app's sign-in. -->
+        <activity
+            android:name="com.music.spotui.ui.screens.AccountBrowser"
+            android:exported="false"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:theme="@style/Theme.WaveBits" />
+        <!-- Per-app language on Android 12 and older (AppCompat stores the choice). -->
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data android:name="autoStoreLocales" android:value="true" />
+        </service>
+        <receiver
+            android:name="androidx.media.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+
+
+        <!-- Home screen widget: now playing with controls. -->
+        <receiver
+            android:name="com.music.spotui.widget.NowPlayingWidget"
+            android:exported="false"
+            android:label="${appLabel}">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_now_playing_info" />
+        </receiver>
+    </application>
+
+</manifest>

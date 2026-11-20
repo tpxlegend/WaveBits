@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">WaveBits</string>
+    <string name="aa_playlists">Плейлисты</string>
+    <string name="aa_albums">Альбомы</string>
+    <string name="aa_artists">Исполнители</string>
+    <string name="settings_amoled_theme">Тема AMOLED</string>
+    <string name="settings_amoled_theme_subtitle">Чистый чёрный фон для экономии заряда</string>
+    <string name="main_update_available">Доступно новое обновление</string>
+
+    <string name="notif_action_play">Воспроизвести</string>
+    <string name="notif_action_pause">Пауза</string>
+    <string name="notif_shuffle_enable">Включить перемешивание</string>
+    <string name="notif_shuffle_disable">Выключить перемешивание</string>
+    <string name="notif_shuffle_disable_smart">Выключить умное перемешивание</string>
+
+
+    <string name="energy_saver_title">Экономия заряда</string>
+    <string name="energy_saver_summary">Canvas выключен, видео и анимации легче</string>
+    <string name="video_fullscreen_enter">На весь экран</string>
+    <string name="video_fullscreen_exit">Выйти из полноэкранного режима</string>
+    <string name="playback_seek_description">Позиция воспроизведения</string>
+    <string name="account_page_title">Аккаунт Spotify</string>
+    <string name="account_page_detail">Подписка, конфиденциальность и устройства, на spotify.com</string>
+    <string name="player_source_downloaded">Скачано</string>
+</resources>
