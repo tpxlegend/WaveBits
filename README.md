@@ -114,8 +114,7 @@ WaveBits follows defense-in-depth practices on Android:
    ./gradlew :app:testDebugUnitTest :extensions:test
    ```
 
-> **Note:** Debug signing uses the project's debug keystore configuration automatically. For production release builds, configure signing credentials via environment variables (`MYSPOTI_KEYSTORE`, `MYSPOTI_KEYSTORE_PASSWORD`, `MYSPOTI_KEY_ALIAS`, `MYSPOTI_KEY_PASSWORD`).
-
+> **Note:** Debug signing uses the project's debug keystore configuration automatically. For production release builds, configure signing credentials via environment variables 
 ---
 
 ## 🙌 Attribution & Third-Party Notices
